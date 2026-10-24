@@ -1,0 +1,22 @@
+{
+  "name": "AWM gunshot extracted and amplified from user-provided video",
+  "source": "微信视频2026-10-24_012643_888.mp4",
+  "sourceSha256": "ff7333cc12965b6f87754eac3f86da6315471dbb22a4e5872225dbb1a2f51508",
+  "license": "User-provided video; no separate license supplied",
+  "sourceShot": "assets/originals/sniper/awm-video-shot.wav",
+  "sourceShotSha256": "3d47258d081732f477b5259668f49e884bbb79c32c06598a60777dbf5d3e0f4f",
+  "cropStartVideoSeconds": 1.147,
+  "cropEndVideoSeconds": 1.915,
+  "filter": "aresample=192000,volume=20dB,alimiter=limit=0.885:attack=1:release=3:level=false:latency=true,aresample=48000",
+  "fadeInSeconds": 0.0005,
+  "fadeOutSeconds": 0.06,
+  "sampleRate": 48000,
+  "channels": 1,
+  "bitsPerSample": 16,
+  "outputSeconds": 0.768,
+  "peakDbfs": -1.0177174806594849,
+  "rmsDbfs": -5.843067169189453,
+  "rmsGainDb": 4.741940975189209,
+  "clippedSamples": 0,
+  "outputSha256": "8898bbddaedfca60fe98d899be7560163f7a7d1dc3b5e46ed116f7683c4655f2"
+}

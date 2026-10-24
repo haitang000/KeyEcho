@@ -1,0 +1,59 @@
+{
+  "revision": "326252a13e7bef4f1c35d08ef0189b5af6f8ba02",
+  "packs": [
+    {
+      "id": "cherrymx-red-pbt",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-red-pbt/sound.ogg",
+      "sourceSha256": "d02e33aa7b4147187306058c08de16c5773db8754c218228b579e05a8e6b3ed8",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-red-abs",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-red-abs/sound.ogg",
+      "sourceSha256": "330f91fc14f5a5232594f17058f02603ea67226fafd362fcf94e90463dbdcb40",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-brown-pbt",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-brown-pbt/sound.ogg",
+      "sourceSha256": "10390a4325fe218b005c509cac28c90bdd21c16bfcc303fe57d51d2588efd047",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-brown-abs",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-brown-abs/sound.ogg",
+      "sourceSha256": "1a77001c5741aff8102c967ba7b8f42d40771506f185174ff40d0de78a265385",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-blue-pbt",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-blue-pbt/sound.ogg",
+      "sourceSha256": "68d46de5a091e4d6daf468327c87e3e75494e645dacc8d55418d5151aaf84349",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-blue-abs",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-blue-abs/sound.ogg",
+      "sourceSha256": "8cf6f7dc90f869b5544c4ec8d1fdb8d975c057d9383020920b03cf46323b1ca1",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-black-pbt",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-black-pbt/sound.ogg",
+      "sourceSha256": "29f3ce7f6b700db7076831ceb2ef8b616652538195690707763563b4a8805b37",
+      "keyCount": 104
+    },
+    {
+      "id": "cherrymx-black-abs",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/cherrymx-black-abs/sound.ogg",
+      "sourceSha256": "8c23cf05846e7126c3d3b7cde161395dcbabc084493458716bffbdf491ed14ab",
+      "keyCount": 104
+    },
+    {
+      "id": "topre-purple-hybrid-pbt",
+      "source": "https://raw.githubusercontent.com/hainguyents13/mechvibes/326252a13e7bef4f1c35d08ef0189b5af6f8ba02/src/audio/topre-purple-hybrid-pbt/sound.ogg",
+      "sourceSha256": "af073650844bced0050df018bf872b16307a1143c8f356be5ea75340e6dc0298",
+      "keyCount": 104
+    }
+  ]
+}

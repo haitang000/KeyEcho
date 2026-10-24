@@ -1,0 +1,58 @@
+{
+  "sources": {
+    "keyboard01.ogg": {
+      "url": "https://opengameart.org/sites/default/files/keyboard01_0.ogg",
+      "sha256": "5917fc7ce559058569bbdd9df9f32c6e07eda3a13a1be3e7a090761a24cee227"
+    },
+    "keyboard02.ogg": {
+      "url": "https://opengameart.org/sites/default/files/keyboard02_0.ogg",
+      "sha256": "21815899715b18b9c703b0a94dde19aad1ad7561b3a6d95bff088442dcaeefc4"
+    },
+    "shots.7z": {
+      "url": "https://opengameart.org/sites/default/files/shots.7z",
+      "sha256": "4a5d78c7520396a4a1da7617d56c456031ac0041c77cb90a019fd75918bfb618"
+    }
+  },
+  "assets": [
+    {
+      "file": "mechanical-1.wav",
+      "source": "keyboard01.ogg",
+      "startSeconds": 0.006,
+      "endSeconds": 0.07,
+      "peak": 0.72,
+      "sha256": "647c689808a0d4d0ffa259413afb7e0126455fa4352fdb02fb6dffdbd43fab03"
+    },
+    {
+      "file": "mechanical-2.wav",
+      "source": "keyboard02.ogg",
+      "startSeconds": 0.032,
+      "endSeconds": 0.11,
+      "peak": 0.72,
+      "sha256": "fa5bf4f4c9c163f483302ee42d7ce3b0f9573ae4930609373549036f3af6d0e7"
+    },
+    {
+      "file": "pistol.wav",
+      "source": "shots/shots/pistol.wav",
+      "startSeconds": 0.001,
+      "endSeconds": 0.5,
+      "peak": 0.72,
+      "sha256": "b21d7ec8cc3b7ef6209c50f22f4624769142f082491341da631ff53edc7386be"
+    },
+    {
+      "file": "rifle.wav",
+      "source": "shots/shots/rifle.wav",
+      "startSeconds": 0.001,
+      "endSeconds": 0.45,
+      "peak": 0.72,
+      "sha256": "d991cd82a7a7d153d9f67a0acf7d657927d9611e6faff179e5437c2e1e383490"
+    },
+    {
+      "file": "shotgun.wav",
+      "source": "shots/shots/shotgun.wav",
+      "startSeconds": 0.001,
+      "endSeconds": 0.45,
+      "peak": 0.72,
+      "sha256": "ad1d84b038243675192f515ed2642016af6042d64dd182bab919fbf7ad74bab0"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "videoFile": "微信视频2026-10-24_012643_888.mp4",
+  "videoSha256": "ff7333cc12965b6f87754eac3f86da6315471dbb22a4e5872225dbb1a2f51508",
+  "audioStreamStartSeconds": 0.02,
+  "cropStartAudioSeconds": 1.127,
+  "cropEndAudioSeconds": 1.895,
+  "cropStartVideoSeconds": 1.147,
+  "cropEndVideoSeconds": 1.915,
+  "sourceShotSha256": "3d47258d081732f477b5259668f49e884bbb79c32c06598a60777dbf5d3e0f4f",
+  "sampleRate": 48000,
+  "samples": 36864,
+  "description": "First gunshot, ends before the bolt/reload transient. User-provided video; no separate license supplied."
+}

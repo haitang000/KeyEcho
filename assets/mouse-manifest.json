@@ -1,0 +1,19 @@
+{
+  "source": "https://opengameart.org/sites/default/files/middle-click-press.wav",
+  "sourcePage": "https://opengameart.org/content/middle-mouse-click",
+  "author": "1j01",
+  "license": "CC0 1.0",
+  "sourceSha256": "8a0ec2e7341f70b33f0802aadeb6a0689aed893048a600bfd46b1a6716fbe8fe",
+  "assets": [
+    {
+      "file": "mouse-crisp.wav",
+      "seconds": 0.0720625,
+      "sha256": "d323303dae888964178401433982fc78cc0946bbb83a87ad1ecce6fa0ac75b84"
+    },
+    {
+      "file": "mouse-soft.wav",
+      "seconds": 0.0720625,
+      "sha256": "4ad6ae6cea757a451a457d33c6a3f7eb1ea59e222d8a459ac44ea4bcb6f1470d"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<Solution>
+  <Folder Name="/src/"><Project Path="src/KeyEcho.Core/KeyEcho.Core.csproj" /><Project Path="src/KeyEcho.App/KeyEcho.App.csproj" /></Folder>
+  <Folder Name="/tests/"><Project Path="tests/KeyEcho.Tests/KeyEcho.Tests.csproj" /><Project Path="tests/KeyEcho.WindowsSmoke/KeyEcho.WindowsSmoke.csproj" /></Folder>
+</Solution>

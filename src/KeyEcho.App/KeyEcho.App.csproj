@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\KeyEcho.ico</ApplicationIcon>
+    <Version>1.2.5</Version>
+    <SatelliteResourceLanguages>en;zh-Hans</SatelliteResourceLanguages>
+    <Company>KeyEcho</Company>
+    <Description>Windows 全局键鼠音效</Description>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="KeyEcho.WindowsSmoke" />
+    <ProjectReference Include="..\KeyEcho.Core\KeyEcho.Core.csproj" />
+    <PackageReference Include="NAudio.Wasapi" Version="3.3.0" />
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+    <Using Include="System.IO" />
+    <Content Include="Assets\Sounds\*.wav" CopyToOutputDirectory="PreserveNewest" />
+    <Content Update="Assets\Sounds\mechanical-*.wav" CopyToPublishDirectory="Never" />
+    <Content Include="Assets\Sounds\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\Licenses\*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" CopyToOutputDirectory="PreserveNewest" />
+    <Resource Include="Assets\KeyEcho.ico" />
+  </ItemGroup>
+</Project>
