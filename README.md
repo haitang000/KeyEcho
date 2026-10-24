@@ -1,5 +1,7 @@
 # KeyEcho
 
+[![CI](https://github.com/haitang000/KeyEcho/actions/workflows/ci.yml/badge.svg)](https://github.com/haitang000/KeyEcho/actions/workflows/ci.yml)
+
 Windows 全局键鼠音效应用。中文浅色界面，支持后台打字和鼠标点击发声、托盘运行和本地 WAV 导入。
 
 源码仓库：[haitang000/KeyEcho](https://github.com/haitang000/KeyEcho)。项目代码采用 [Apache License 2.0](LICENSE)，第三方组件和音效素材的许可见文末说明。
@@ -61,6 +63,16 @@ Windows 集成验证（会试听一个音效，仅分析验证进程自身的音
 $env:DOTNET_ROOT = (Resolve-Path './.tools/dotnet').Path
 ./.tools/dotnet/dotnet.exe run --project tests/KeyEcho.WindowsSmoke -c Release -- artifacts/qa
 ```
+
+## 持续集成
+
+[GitHub Actions CI](https://github.com/haitang000/KeyEcho/actions/workflows/ci.yml) 在推送到 `main`、创建或更新拉取请求时运行，也可从 Actions 页面手动触发。
+
+流程在 Windows Server 2025 上按 `global.json` 安装 .NET SDK，并通过现有脚本准备 Inno Setup、编译整个解决方案、运行自动测试、生成包含运行环境的 x64 安装包。音效直接使用仓库内已处理的 WAV，无需下载原始素材。
+
+运行成功后，可从该次运行的 **Artifacts** 下载 `KeyEcho-windows-x64`，内含安装程序，保留 14 天。`test-results-windows` 包含 TRX 测试报告，保留 7 天；测试失败时也会上传已生成的报告。
+
+WASAPI 回环、真实键鼠输入和硬件切换的 Windows 集成验证需要本地桌面和音频设备，继续使用上面的本地验证命令。
 
 ## 音效素材
 

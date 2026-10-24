@@ -9,7 +9,7 @@ Push-Location $root
 try {
     & $dotnet build KeyEcho.slnx -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Build failed.' }
-    & $dotnet test tests/KeyEcho.Tests/KeyEcho.Tests.csproj -c Release --no-build
+    & $dotnet test tests/KeyEcho.Tests/KeyEcho.Tests.csproj -c Release --no-build --logger 'trx;LogFileName=unit-tests.trx' --results-directory (Join-Path $root 'artifacts\test-results')
     if ($LASTEXITCODE -ne 0) { throw 'Tests failed.' }
     if ($Publish -or $Installer) {
         & $dotnet publish src/KeyEcho.App/KeyEcho.App.csproj -c Release -r win-x64 --self-contained true -o artifacts/release-1.2.6 -p:PublishTrimmed=false
