@@ -16,7 +16,7 @@ public sealed class AboutWindow : Window
         FontFamily = new FontFamily("Segoe UI, Microsoft YaHei UI"); FontSize = 14;
         var panel = new StackPanel { Margin = new Thickness(26) };
         panel.Children.Add(new TextBlock { Text = "KeyEcho", FontSize = 28, FontWeight = FontWeights.SemiBold });
-        AddText(panel, "版本 1.2.5 · Windows 键鼠音效", 0, 8);
+        AddText(panel, "版本 1.2.6 · Windows 键鼠音效", 0, 8);
         AddText(panel, "音效在本地播放，仅瞬时处理按键状态，不保存或上传输入内容。", 20, 12);
         AddText(panel, "音效来源与许可", 20, 12, true);
         AddLink(panel, "9 款键盘录音 — Mechvibes / Hai Nguyen（MIT）", "https://github.com/hainguyents13/mechvibes");

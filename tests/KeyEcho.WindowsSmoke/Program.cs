@@ -106,6 +106,24 @@ internal static class Program
             Require(controller.ActiveSoundName == "清脆点击", "Mouse tab display");
             float mousePeak = await MeasureMouseAudioAsync(controller);
             Require(mousePeak > .002f, "No mouse audio reached WASAPI while keyboard volume was zero.");
+            var mousePresetPeaks = new Dictionary<string, Dictionary<string, float>>();
+            foreach (string preset in new[] { "crisp", "soft" })
+            {
+                controller.SelectedMousePreset = PresetCatalog.Mice.First(item => item.Id == preset);
+                var peaks = new Dictionary<string, float>();
+                foreach (var button in new[] { KeyEcho.Core.MouseButton.Left, KeyEcho.Core.MouseButton.Right, KeyEcho.Core.MouseButton.Middle, KeyEcho.Core.MouseButton.Back, KeyEcho.Core.MouseButton.Forward })
+                {
+                    float buttonPeak = await MeasureAudioAsync(() => Require(controller.PlayMouse(button), preset + " " + button + " dispatch"));
+                    Require(buttonPeak > .002f, preset + " " + button + " must reach WASAPI");
+                    peaks[button.ToString()] = buttonPeak;
+                }
+                controller.Enabled = false;
+                float previewPeak = await MeasureAudioAsync(controller.PreviewActive);
+                Require(previewPeak > .002f && !controller.Enabled, preset + " preview while paused");
+                peaks["pausedPreview"] = previewPeak;
+                controller.Enabled = true;
+                mousePresetPeaks[preset] = peaks;
+            }
             controller.MouseEnabled = false;
             Require(!controller.PlayMouse(KeyEcho.Core.MouseButton.Left), "Disabled mouse must not play");
             await Task.Delay(30);
@@ -200,6 +218,7 @@ internal static class Program
                 keyboardPacks = PresetCatalog.Keyboards.Count,
                 audioLoopbackPeak = peak,
                 mouseLoopbackPeak = mousePeak,
+                mousePresetLoopbackPeaks = mousePresetPeaks,
                 fahLoopbackPeak = fahPeak,
                 fahMouseLoopbackPeak = fahMousePeak,
                 newMemeLoopbackPeaks = memePeaks,

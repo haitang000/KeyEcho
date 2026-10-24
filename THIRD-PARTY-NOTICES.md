@@ -35,12 +35,13 @@
 - 此素材已替换此前使用 CC0 Tikka 录音制作的 AWM 风格预设。来源校验值和处理参数见 assets/awm-video-source.json 和 assets/sniper-manifest.json。
 
 ## 鼠标点击音效
-- 作品：Middle Mouse Click，middle-click-press.wav。
-- 作者：1j01。
-- 来源：https://opengameart.org/content/middle-mouse-click
+- 普通点击：gokiburi 的 mouse_clicks.wav，通过 ESC-50 的 4-202298-A-31.wav 取得，截取四段独立的开关瞬态。
+- 原始来源：https://freesound.org/people/gokiburi/sounds/202298/
+- 下载及单条录音的 CC0 许可证据：https://github.com/karolpiczak/ESC-50/blob/33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6/LICENSE 。仅使用其中这一条 CC0 录音，不将整个数据集视为 CC0。
+- 中键：1j01 的 Middle Mouse Click，middle-click-press.wav，来源：https://opengameart.org/content/middle-mouse-click
 - 许可：CC0 1.0，https://creativecommons.org/publicdomain/zero/1.0/
-- 修改：截取按下声、去掉起始静音、调整峰值、添加短淡出，转换为 48 kHz 单声道 PCM WAV；柔和版本额外削弱高频并降低增益。
-- 鼠标各按键共用这段按下录音，不触发松开声；“跟随键盘音效”模式使用当前键盘或枪声预设。
+- 修改：截取单次开关声、调整峰值、添加 0.25 ms 淡入及 5 ms 淡出，转换为 48 kHz 单声道 16-bit PCM WAV。保留原速和音调；柔和版混合原信号和轻度低通后的信号并降低增益。
+- 左、右及侧键在四段采样间随机选择，连续点击不重复同一段；中键单独使用中键录音。不触发松开声；“跟随键盘音效”模式使用当前键盘、枪声或梗音效预设。
 - 来源、校验值和产物记录见 assets/mouse-manifest.json。
 
 ## FAHHHHHH 梗音效

@@ -20,8 +20,8 @@ public static class PresetCatalog
     public static bool IsKeyboard(string id) => Keyboards.Any(preset => preset.Id == id);
     public static IReadOnlyList<MousePreset> Mice { get; } =
     [
-        new("crisp", "清脆点击", "真实鼠标录音 · 清晰的咔嗒声"),
-        new("soft", "柔和点击", "削弱高频 · 更轻柔的点击声"),
+        new("crisp", "清脆点击", "真实按键录音 · 多段采样自然变化 · 中键独立音色"),
+        new("soft", "柔和点击", "保留真实咔嗒声 · 高频稍柔和 · 多段采样自然变化"),
         new("follow", "跟随键盘音效", "使用当前选中的键盘、枪械或热门梗音效")
     ];
     public static KeyboardPreset? Find(string id) => Keyboards.FirstOrDefault(preset => preset.Id == id);

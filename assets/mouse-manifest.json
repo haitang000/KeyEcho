@@ -1,19 +1,128 @@
 {
-  "source": "https://opengameart.org/sites/default/files/middle-click-press.wav",
-  "sourcePage": "https://opengameart.org/content/middle-mouse-click",
-  "author": "1j01",
-  "license": "CC0 1.0",
-  "sourceSha256": "8a0ec2e7341f70b33f0802aadeb6a0689aed893048a600bfd46b1a6716fbe8fe",
+  "sources": [
+    {
+      "file": "4-202298-A-31.wav",
+      "url": "https://raw.githubusercontent.com/karolpiczak/ESC-50/33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6/audio/4-202298-A-31.wav",
+      "sourcePage": "https://freesound.org/people/gokiburi/sounds/202298/",
+      "title": "mouse_clicks.wav",
+      "author": "gokiburi",
+      "license": "CC0 1.0",
+      "licenseEvidence": "https://github.com/karolpiczak/ESC-50/blob/33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6/LICENSE",
+      "sha256": "e120e039333f2d013153a1da70f53fd8049dca03abf73aa0482125a1413446ff"
+    },
+    {
+      "file": "middle-click-press.wav",
+      "url": "https://opengameart.org/sites/default/files/middle-click-press.wav",
+      "sourcePage": "https://opengameart.org/content/middle-mouse-click",
+      "title": "Middle Mouse Click",
+      "author": "1j01",
+      "license": "CC0 1.0",
+      "sha256": "8a0ec2e7341f70b33f0802aadeb6a0689aed893048a600bfd46b1a6716fbe8fe"
+    }
+  ],
+  "sampleRate": 48000,
+  "processing": {
+    "clickStartSeconds": [
+      0.374,
+      1.153,
+      2.102,
+      4.155
+    ],
+    "clickDurationSeconds": 0.06,
+    "clickPeakTargets": [
+      0.54,
+      0.57,
+      0.55,
+      0.53
+    ],
+    "middlePeakTarget": 0.48,
+    "fadeInMilliseconds": 0.25,
+    "fadeOutMilliseconds": 5,
+    "soft": {
+      "lowPassHz": 4500,
+      "dryMix": 0.55,
+      "gain": 0.78
+    },
+    "pitchShift": false
+  },
   "assets": [
     {
       "file": "mouse-crisp.wav",
+      "seconds": 0.06,
+      "sha256": "5c214930588c4dd14ae995287384497857cbce77cdc86138252f28414675857a",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 0.374,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-crisp-2.wav",
+      "seconds": 0.06,
+      "sha256": "762cab4436c067495b18be20dcf2a0b2e6f6323808309003999bcc3f89f80243",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 1.153,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-crisp-3.wav",
+      "seconds": 0.06,
+      "sha256": "a118931e37cc5f289158987e42c2983f8ff591b23233d4420d2b77b2ddb4798c",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 2.102,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-crisp-4.wav",
+      "seconds": 0.06,
+      "sha256": "805dee273bb8fee7d1f596907e131cbd4af541e7aa86a37dad3365892c2f0aba",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 4.155,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-crisp-middle.wav",
       "seconds": 0.0720625,
-      "sha256": "d323303dae888964178401433982fc78cc0946bbb83a87ad1ecce6fa0ac75b84"
+      "sha256": "545be2f54c0363cec567aa2315b4d6b705b2637202901de8214b30a432d66d48",
+      "source": "middle-click-press.wav",
+      "role": "middle"
     },
     {
       "file": "mouse-soft.wav",
+      "seconds": 0.06,
+      "sha256": "239f06de2d78b05c07667367e282a36c94207147db9c171b0301df1e29e952e7",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 0.374,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-soft-2.wav",
+      "seconds": 0.06,
+      "sha256": "f5e3b5e793d9c8c309b22747ef92a2463acc2b0b9debd7a26a2a5b2056848063",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 1.153,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-soft-3.wav",
+      "seconds": 0.06,
+      "sha256": "e1587e15b51934dc4dde817d3f0ad45e75d6e50382b609909b1fa8322eded36f",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 2.102,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-soft-4.wav",
+      "seconds": 0.06,
+      "sha256": "4fbb4c0d1fa074b2d4f6b985fd0517d75ab7e00654f70a6ec95af4fbfff93596",
+      "source": "4-202298-A-31.wav",
+      "startSeconds": 4.155,
+      "role": "primary"
+    },
+    {
+      "file": "mouse-soft-middle.wav",
       "seconds": 0.0720625,
-      "sha256": "4ad6ae6cea757a451a457d33c6a3f7eb1ea59e222d8a459ac44ea4bcb6f1470d"
+      "sha256": "9cd9ca65d62646a2e01c93b19a5b93ab206b41a46f61280c3f9990f99b5b2661",
+      "source": "middle-click-press.wav",
+      "role": "middle"
     }
   ]
 }

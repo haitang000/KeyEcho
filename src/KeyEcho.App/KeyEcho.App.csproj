@@ -6,7 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\KeyEcho.ico</ApplicationIcon>
-    <Version>1.2.5</Version>
+    <Version>1.2.6</Version>
     <SatelliteResourceLanguages>en;zh-Hans</SatelliteResourceLanguages>
     <Company>KeyEcho</Company>
     <Description>Windows 全局键鼠音效</Description>

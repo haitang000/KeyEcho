@@ -16,10 +16,10 @@ public sealed class AppController : INotifyPropertyChanged, IDisposable
     private readonly MouseButtonPoller _mouseInput = new();
     private readonly Dictionary<string, SoundBank> _banks = [];
     private readonly SoundBankCache _keyboardCache = new(2);
-    private readonly Dictionary<string, float[]> _mouseClips = [];
+    private readonly Dictionary<string, MouseSoundBank> _mouseBanks = [];
     private readonly DispatcherTimer _saveTimer;
     private SoundBank? _currentBank;
-    private float[]? _currentMouseClip;
+    private MouseSoundBank? _currentMouseBank;
     private int _activeInputTab;
     private KeyboardPreset _keyboardPreset = PresetCatalog.Keyboards[0];
     private AppSettings _settings;
@@ -113,7 +113,7 @@ public sealed class AppController : INotifyPropertyChanged, IDisposable
         {
             if (value is null) return;
             _settings = _settings with { MousePresetId = value.Id };
-            Volatile.Write(ref _currentMouseClip, _mouseClips.GetValueOrDefault(value.Id));
+            Volatile.Write(ref _currentMouseBank, _mouseBanks.GetValueOrDefault(value.Id));
             Changed(); Changed(nameof(ActiveSoundName)); Changed(nameof(ActiveSoundDescription)); SaveSoon();
         }
     }
@@ -195,8 +195,8 @@ public sealed class AppController : INotifyPropertyChanged, IDisposable
             return banks;
         });
         foreach (var (id, bank) in loaded) _banks[id] = bank;
-        foreach (string id in new[] { "crisp", "soft" }) _mouseClips[id] = WaveAsset.Load(Path.Combine(AppContext.BaseDirectory, "Assets", "Sounds", "mouse-" + id + ".wav"));
-        Volatile.Write(ref _currentMouseClip, _mouseClips.GetValueOrDefault(_settings.MousePresetId));
+        foreach (string id in new[] { "crisp", "soft" }) _mouseBanks[id] = MouseSoundBank.Load(Path.Combine(AppContext.BaseDirectory, "Assets", "Sounds"), id);
+        Volatile.Write(ref _currentMouseBank, _mouseBanks.GetValueOrDefault(_settings.MousePresetId));
         _audio.Mixer.Volume = _settings.Volume;
         _audio.Mixer.MouseVolume = _settings.MouseVolume;
         _audio.Mixer.SetMouseEnabled(_settings.MouseEnabled);
@@ -259,7 +259,7 @@ public sealed class AppController : INotifyPropertyChanged, IDisposable
     internal bool PlayMouse(MouseButton button, bool preview = false)
     {
         if (!_ready || !_audio.Available || button is not (MouseButton.Left or MouseButton.Right or MouseButton.Middle or MouseButton.Back or MouseButton.Forward)) return false;
-        var clip = Volatile.Read(ref _currentMouseClip) ?? Volatile.Read(ref _currentBank)?.Preview();
+        var clip = Volatile.Read(ref _currentMouseBank)?.ForButton(button) ?? Volatile.Read(ref _currentBank)?.Preview();
         return clip is not null && _audio.Mixer.Play(clip, preview, SoundSource.Mouse);
     }
 

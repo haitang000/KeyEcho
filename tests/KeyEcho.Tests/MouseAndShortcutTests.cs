@@ -67,6 +67,47 @@ public sealed class MouseTests
         Assert.Contains(soft, sample => Math.Abs(sample) > .03f);
         Assert.False(crisp.SequenceEqual(soft));
     }
+
+    [Fact] public void MouseClickVariationsNeverRepeatAndMiddleHasItsOwnRecording()
+    {
+        float[][] clicks = [[.1f], [.2f], [.3f], [.4f]];
+        float[] middle = [.5f];
+        var bank = new MouseSoundBank(clicks, middle);
+        float[]? previous = null;
+        for (int i = 0; i < 200; i++)
+        {
+            var button = new[] { MouseButton.Left, MouseButton.Right, MouseButton.Back, MouseButton.Forward }[i % 4];
+            var clip = bank.ForButton(button);
+            Assert.Contains(clicks, candidate => ReferenceEquals(candidate, clip));
+            Assert.NotSame(previous, clip);
+            Assert.Same(middle, bank.ForButton(MouseButton.Middle));
+            previous = clip;
+        }
+        Assert.Throws<ArgumentOutOfRangeException>(() => bank.ForButton(MouseButton.None));
+        Assert.Throws<ArgumentOutOfRangeException>(() => bank.ForButton(MouseButton.Left | MouseButton.Right));
+    }
+
+    [Theory]
+    [InlineData("crisp")]
+    [InlineData("soft")]
+    public void EveryPackagedMouseTakeIsShortDistinctAndHasCleanBoundaries(string preset)
+    {
+        string directory = Path.Combine(AppContext.BaseDirectory, "Sounds");
+        var clips = Directory.GetFiles(directory, $"mouse-{preset}*.wav").Select(WaveAsset.Load).ToArray();
+        Assert.Equal(5, clips.Length);
+        for (int i = 0; i < clips.Length; i++)
+        {
+            var clip = clips[i];
+            Assert.InRange(clip.Length, 3000, 9600); // 31–100 ms of 48 kHz stereo
+            Assert.InRange(clip.Max(Math.Abs), .15f, .7f);
+            Assert.Equal(0, clip[0]);
+            Assert.Equal(0, clip[^1]);
+            Assert.Contains(clip.Take(960), value => Math.Abs(value) > .03f); // attack within 10 ms
+            for (int j = 0; j < i; j++) Assert.False(clip.SequenceEqual(clips[j]));
+        }
+        var bank = MouseSoundBank.Load(directory, preset);
+        Assert.False(bank.ForButton(MouseButton.Left).SequenceEqual(bank.ForButton(MouseButton.Middle)));
+    }
 }
 
 public sealed class ShortcutRoutingTests

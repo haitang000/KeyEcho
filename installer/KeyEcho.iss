@@ -1,5 +1,5 @@
 #ifndef PublishDir
-  #define PublishDir "..\artifacts\release-1.2.5"
+  #define PublishDir "..\artifacts\release-1.2.6"
 #endif
 #ifndef OutputDir
   #define OutputDir "..\artifacts\installer"
@@ -7,7 +7,7 @@
 [Setup]
 AppId={{5F71F699-4E43-4A4A-A8DE-984A82B030B0}
 AppName=KeyEcho
-AppVersion=1.2.5
+AppVersion=1.2.6
 AppPublisher=KeyEcho
 DefaultDirName={localappdata}\Programs\KeyEcho
 DefaultGroupName=KeyEcho
@@ -17,7 +17,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0.19041
 OutputDir={#OutputDir}
-OutputBaseFilename=KeyEcho-Setup-1.2.5-x64
+OutputBaseFilename=KeyEcho-Setup-1.2.6-x64
 SetupIconFile=..\src\KeyEcho.App\Assets\KeyEcho.ico
 UninstallDisplayIcon={app}\KeyEcho.App.exe
 Compression=lzma2
